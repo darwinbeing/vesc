@@ -248,6 +248,16 @@ VescPacketRequestValues::VescPacketRequestValues() :
 
 /*------------------------------------------------------------------------------------------------*/
 
+VescPacketExperimentSample::VescPacketExperimentSample(boost::shared_ptr<VescFrame> raw) :
+  VescPacket("ExperimentSample", raw)
+{
+}
+
+REGISTER_PACKET_TYPE(COMM_EXPERIMENT_SAMPLE, VescPacketExperimentSample)
+
+
+/*------------------------------------------------------------------------------------------------*/
+
 
 VescPacketSetDuty::VescPacketSetDuty(double duty) :
   VescPacket("SetDuty", 5, COMM_SET_DUTY)

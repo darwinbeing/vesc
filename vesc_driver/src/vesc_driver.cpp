@@ -137,7 +137,12 @@ void VescDriver::vescPacketCallback(const boost::shared_ptr<VescPacket const>& p
     // todo: might need lock here
     fw_version_major_ = fw_version->fwMajor();
     fw_version_minor_ = fw_version->fwMinor();
+  } else if (packet->name() == "ExperimentSample") {
+    boost::shared_ptr<VescPacketExperimentSample const> fw_version =
+      boost::dynamic_pointer_cast<VescPacketExperimentSample const>(packet);
+    // todo: might need lock here
   }
+
 }
 
 void VescDriver::vescErrorCallback(const std::string& error)

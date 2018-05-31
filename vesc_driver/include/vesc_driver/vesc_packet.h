@@ -131,6 +131,14 @@ public:
 
 /*------------------------------------------------------------------------------------------------*/
 
+class VescPacketExperimentSample : public VescPacket
+{
+public:
+  VescPacketExperimentSample(boost::shared_ptr<VescFrame> raw);
+};
+
+/*------------------------------------------------------------------------------------------------*/
+
 class VescPacketSetDuty : public VescPacket
 {
 public:
